@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Kanit-Light';
+    src: url('../fonts/kanit/Kanit-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kanit-Medium';
+    src: url('../fonts/kanit/Kanit-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kanit-Regular';
+    src: url('../fonts/kanit/Kanit-Regular.ttf') format('truetype');
+}
+body {
+    font-family: 'Kanit-Light';
+    font-size: 1.2rem;
+}
+footer{
+    padding: 5% 15%;
+}
+.navbar {
+    padding: 2% 15%;
+}
+.navbar-brand{
+    background-color: #000;
+    color: #fff !important;
+    padding: 12px 24px;;
+}
+.btn {
+    background-color: #e5dcbd;
+    border-radius: unset;
+    border: unset;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.form-control {
+    background-color: #f6f4f5;
+    border-radius: unset;
+    border: unset;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #cacaca;
+    opacity: 1; /* Firefox */
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #cacaca;
+}
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: #cacaca;
+}
+.text-header-medium{
+    font-family: 'Kanit-Medium';
+    font-size: 2.5rem;
+}
+.text-header-regular{
+    font-family: 'Kanit-Regular';
+    font-size: 1.85rem;
+}
+.text-regular{
+    font-family: 'Kanit-Regular';
+}
+.footer-panel{
+    border-left: solid 5px #878787;
+    padding-left: 18px;
+}
