@@ -6,8 +6,8 @@ $contact_model = new ContactModel;
 if($_GET['action'] == 'signup'){
     if(isset($_POST['name'])){
         $data = [];
-        $data['name'] = trim($_POST['name']);
-        $data['email'] = trim($_POST['email']);
+        $data['contact_name'] = trim($_POST['name']);
+        $data['contact_email'] = trim($_POST['email']);
 
         $result = $contact_model->insertContact($data);
 

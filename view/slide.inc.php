@@ -1,7 +1,12 @@
+<?PHP 
+require_once('models/HomeSlideModel.php');    
+$home_slide_model = new HomeSlideModel;   
+$home_slide = $home_slide_model->getHomeSlideBy(); 
+?>
 <section class="slide">
-    <img src="img_upload/slide/1.jpg" alt="Los Angeles">
-    <img src="img_upload/slide/1.jpg" alt="Chicago">
-    <img src="img_upload/slide/1.jpg" alt="New York">
+    <?PHP for($i=0;$i<count($home_slide );$i++){ ?>
+            <img src="img_upload/home_slide/<?PHP echo $home_slide[$i]['home_slide_img'];?>" > 
+    <?PHP } ?> 
 </section>
 
 <script type="text/javascript">

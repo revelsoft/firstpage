@@ -1,3 +1,8 @@
+<?PHP 
+require_once('models/TrendProductModel.php');    
+$trend_product_model = new TrendProductModel;   
+$trend_product = $trend_product_model->getTrendProductBy(); 
+?>
 <div style="padding: 5% 10%;">
     <div class="text-center">
         <div class="text-header-medium">
@@ -8,30 +13,22 @@
         </div>
             
         <div class="row">
-            <div class="col-md-4">
-                <img src="img_upload/product/1.jpg" style="width: 90%;" alt="CARD HOLDER">
-                <div class="text-header-regular" style="padding: 50px 0;">
-                    CARD HOLDER
+            <?PHP for($i=0;$i<count($trend_product );$i++){ ?> 
+                <div class="col-md-4">
+                    <img src="img_upload/trend_product/<?PHP echo $trend_product[$i]['trend_product_img'];?>" style="width: 90%;" alt="<?PHP echo $trend_product[$i]['trend_product_title'];?>">
+                    <div class="text-header-regular" style="padding: 50px 0;">
+                    <?PHP echo $trend_product[$i]['trend_product_title'];?>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="col-md-4">
-                <img src="img_upload/product/2.jpg" style="width: 90%;" alt="LEATHER BOOTS">
-                <div class="text-header-regular" style="padding: 50px 0;">
-                    LEATHER BOOTS
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <img src="img_upload/product/3.jpg" style="width: 90%;" alt="LEATHER BAG">
-                <div class="text-header-regular" style="padding: 50px 0;">
-                    LEATHER BAG
-                </div>
-            </div>
+            <?PHP } ?>  
         </div>
     </div>
 </div>
-
+<?PHP 
+require_once('models/ProductModel.php');    
+$product_model = new ProductModel;   
+$product = $product_model->getProductBy(); 
+?>
 <div style="padding: 5% 10%;">
     <div class="text-center">
         <div class="text-header-medium">
@@ -42,37 +39,18 @@
         </div>
 
         <div class="row">
-            <?php for($i=0; $i<2; $i++){?>
-            <div class="col-md-4">
-                <img src="img_upload/product/1.jpg" style="width: 90%;" alt="CARD HOLDER">
+            <?PHP for($i=0;$i<count($product );$i++){ ?> 
+                <div class="col-md-4">
+                <img src="img_upload/product/<?PHP echo $product[$i]['product_img'];?>" style="width: 90%;" alt="<?PHP echo $product[$i]['product_name'];?>">
                 <div class="text-regular" style="padding-top: 48px;">
-                    CARD HOLDER
+                <?PHP echo $product[$i]['product_name'];?>
                 </div>
                 <div class="text-regular" style="padding: 16px 0px; color: #c6c6c6;">
-                    13,000 ฿
+                <?php echo number_format($product[$i]['product_price']); ?> ฿
                 </div>
             </div>
-        
-            <div class="col-md-4">
-                <img src="img_upload/product/2.jpg" style="width: 90%;" alt="LEATHER BOOTS">
-                <div class="text-regular" style="padding-top: 48px;">
-                    LEATHER BOOTS
-                </div>
-                <div class="text-regular" style="padding: 16px 0px; color: #c6c6c6;">
-                    13,000 ฿
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <img src="img_upload/product/3.jpg" style="width: 90%;" alt="LEATHER BAG">
-                <div class="text-regular" style="padding-top: 48px;">
-                    LEATHER BAG
-                </div>
-                <div class="text-regular" style="padding: 16px 0px; color: #c6c6c6;">
-                    13,000 ฿
-                </div>
-            </div>
-            <?php } ?>
+            <?PHP } ?>  
+          
         </div>
     </div>
 </div>
