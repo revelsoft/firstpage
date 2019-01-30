@@ -24,7 +24,8 @@
     <body>
         <?PHP require_once('view/header.inc.php'); ?>
         <?PHP require_once('view/slide.inc.php'); ?>
-        <?PHP require_once('view/product.inc.php'); ?>
+        <?PHP require_once('view/trending-product.inc.php'); ?>
+        <?PHP require_once('view/popular-product.inc.php'); ?>
         <?PHP require_once('view/contact.inc.php'); ?>
         <?PHP require_once('view/footer.inc.php'); ?>
     </body>
