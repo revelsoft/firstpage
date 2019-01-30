@@ -1,0 +1,221 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jan 30, 2019 at 04:42 AM
+-- Server version: 5.7.17-log
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `web_teach`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_about`
+--
+
+CREATE TABLE `tb_about` (
+  `about_id` int(11) NOT NULL,
+  `about_detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_about`
+--
+
+INSERT INTO `tb_about` (`about_id`, `about_detail`) VALUES
+(1, 'xxxxxx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_contact`
+--
+
+CREATE TABLE `tb_contact` (
+  `contact_id` int(11) NOT NULL,
+  `contact_name` varchar(100) NOT NULL,
+  `contact_email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_contact`
+--
+
+INSERT INTO `tb_contact` (`contact_id`, `contact_name`, `contact_email`) VALUES
+(1, '123', 'jaeba_kam@hotmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_home_slide`
+--
+
+CREATE TABLE `tb_home_slide` (
+  `home_slide_id` int(11) NOT NULL,
+  `home_slide_img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_home_slide`
+--
+
+INSERT INTO `tb_home_slide` (`home_slide_id`, `home_slide_img`) VALUES
+(1, '29012019200043-1.jpg'),
+(2, '29012019200051-1.jpg'),
+(3, '29012019200058-1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_product`
+--
+
+CREATE TABLE `tb_product` (
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `product_img` text NOT NULL,
+  `product_price` double NOT NULL,
+  `product_detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_product`
+--
+
+INSERT INTO `tb_product` (`product_id`, `product_name`, `product_img`, `product_price`, `product_detail`) VALUES
+(3, 'CARD HOLDER', '29012019201141-1.jpg', 13000, 'CARD HOLDER'),
+(4, 'LEATHER BOOTS', '29012019201157-2.jpg', 13000, 'LEATHER BOOTS'),
+(5, 'LEATHER BAG', '29012019201223-3.jpg', 13000, 'LEATHER BAG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_setting`
+--
+
+CREATE TABLE `tb_setting` (
+  `setting_id` int(11) NOT NULL,
+  `setting_tel` varchar(100) NOT NULL,
+  `setting_address` text NOT NULL,
+  `setting_email` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_setting`
+--
+
+INSERT INTO `tb_setting` (`setting_id`, `setting_tel`, `setting_address`, `setting_email`) VALUES
+(1, '02-0016900-3', 'Revel Soft Co., Ltd. <br>271/55 Trokwadthatako T.Nai Muang, <br>A.Muang, Nakhonratchasima 30000', 'Email : info@revelsoft.co.th<br>Inquiries: sale@revelsoft.co.th');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_trend_product`
+--
+
+CREATE TABLE `tb_trend_product` (
+  `trend_product_id` int(11) NOT NULL,
+  `trend_product_img` text NOT NULL,
+  `trend_product_title` varchar(100) NOT NULL,
+  `trend_product_detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_trend_product`
+--
+
+INSERT INTO `tb_trend_product` (`trend_product_id`, `trend_product_img`, `trend_product_title`, `trend_product_detail`) VALUES
+(2, '29012019200251-1.jpg', 'CARD HOLDER', 'CARD HOLDER'),
+(3, '29012019200305-2.jpg', 'LEATHER BOOTS', 'LEATHER BOOTS'),
+(4, '29012019200318-3.jpg', 'LEATHER BAG', 'LEATHER BAG');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tb_about`
+--
+ALTER TABLE `tb_about`
+  ADD PRIMARY KEY (`about_id`);
+
+--
+-- Indexes for table `tb_contact`
+--
+ALTER TABLE `tb_contact`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
+-- Indexes for table `tb_home_slide`
+--
+ALTER TABLE `tb_home_slide`
+  ADD PRIMARY KEY (`home_slide_id`);
+
+--
+-- Indexes for table `tb_product`
+--
+ALTER TABLE `tb_product`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `tb_setting`
+--
+ALTER TABLE `tb_setting`
+  ADD PRIMARY KEY (`setting_id`);
+
+--
+-- Indexes for table `tb_trend_product`
+--
+ALTER TABLE `tb_trend_product`
+  ADD PRIMARY KEY (`trend_product_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tb_about`
+--
+ALTER TABLE `tb_about`
+  MODIFY `about_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_contact`
+--
+ALTER TABLE `tb_contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_home_slide`
+--
+ALTER TABLE `tb_home_slide`
+  MODIFY `home_slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tb_product`
+--
+ALTER TABLE `tb_product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `tb_setting`
+--
+ALTER TABLE `tb_setting`
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_trend_product`
+--
+ALTER TABLE `tb_trend_product`
+  MODIFY `trend_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
