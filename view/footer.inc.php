@@ -1,3 +1,8 @@
+<?PHP 
+require_once('models/SettingModel.php');    
+$setting_model = new SettingModel;   
+$setting = $setting_model->getSettingByID('1'); 
+?>
 <footer>
     <div class="row">
         <div class="col-md-4 footer-panel">
@@ -5,7 +10,7 @@
                 CALL US NOW
             </div>
             <div style="font-size: 2.5rem;">
-                02-0016900-3
+                <?PHP echo $setting['setting_tel'];?>
             </div>
         </div>
         <div class="col-md-4 footer-panel">
@@ -13,9 +18,7 @@
                 COME VISIT US
             </div>
             <div style="font-size: 0.95rem;">
-                Revel Soft Co., Ltd. <br>
-                271/55 Trokwadthatako T.Nai Muang, <br>
-                A.Muang, Nakhonratchasima 30000
+                <?PHP echo $setting['setting_address'];?>
             </div>
         </div>
         <div class="col-md-4 footer-panel">
@@ -23,8 +26,7 @@
                 SEND A MESSENGE
             </div>
             <div>
-                Email : info@revelsoft.co.th <br>
-                Inquiries: sale@revelsoft.co.th
+                <?PHP echo $setting['setting_email'];?>
             </div>
         </div>
     </div>
